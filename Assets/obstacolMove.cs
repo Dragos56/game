@@ -6,9 +6,7 @@ using UnityEngine.UIElements;
 
 public class obstacolMove : MonoBehaviour
 {
-    public float speed = 5f;
-    public float limita = -25f;
-    public Transform pozitie;
+    public float speed = 5;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,10 +15,7 @@ public class obstacolMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = transform.position + Vector3.left * speed * Time.deltaTime;   
-        if (transform.position.x < limita)
-        {
-            Destroy(gameObject);
-        }  
+        transform.position = transform.position + (Vector3.left * speed) * Time.deltaTime;
     }
+    
 }

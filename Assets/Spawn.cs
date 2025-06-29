@@ -1,16 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
-using JetBrains.Annotations;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class Spawn : MonoBehaviour
 {
-    // Start is called before the first frame update
     public GameObject obstacol;
-    public float spawnRate = 2;
+
+    public float spawnTime = 2;
+
     private float timer = 0;
+
     public float heightOffset = 10;
- 
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +20,7 @@ public class NewBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timer < spawnRate)
+        if (timer < spawnTime)
         {
             timer = timer + Time.deltaTime;
         }
@@ -40,3 +40,4 @@ public class NewBehaviourScript : MonoBehaviour
         Instantiate(obstacol, new Vector3(transform.position.x, Random.Range(lowestPoint, highestPoint), 0), transform.rotation);
     }
 }
+
